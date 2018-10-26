@@ -3,10 +3,10 @@ const app = express()
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const port = process.env.PORT || 3000
-const cakes = require('./routes/cakes.js')
-const students = require('./routes/students.js')
+const cakesRoute = require('./routes/cakes')
+const studentsRoute = require('./routes/students')
 
-app.use(bodyParser())
+app.use(bodyParser.json())
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cors())
@@ -15,8 +15,8 @@ app.get('/', (req,res,next) => {
   res.send('🍰')
 })
 
-app.use('/cakes', cakes)
-app.use('/students', students)
+// app.use('/cakes', cakesRoute)
+app.use('/students', studentsRoute)
 
 // error handling
 app.use(notFound)
@@ -28,7 +28,7 @@ function errorHandler(err, req, res, next) {
   res.status(500).send({error: err.message, stack, url: req.originalUrl })
 }
 
-function notFound(err,req,res,next) {
+function notFound(req,res,next) {
   res.status(404).send(err)
 }
 
