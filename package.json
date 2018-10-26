@@ -1,0 +1,25 @@
+{
+  "name": "express-server-mastery",
+  "version": "1.0.0",
+  "description": "Today you will be working together with someone else in your cohort to produce an Express server with full CRUD functionality for 2 collections of resources. Your goal is to complete this by the end of the day, but if you do not finish that is ok (you can work it out with your partner to finish over the weekend or next week).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thatvictor7/express-server-mastery.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thatvictor7/express-server-mastery/issues"
+  },
+  "homepage": "https://github.com/thatvictor7/express-server-mastery#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.4"
+  }
+}
