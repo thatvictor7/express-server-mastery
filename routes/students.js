@@ -18,7 +18,23 @@ router.post('/', (req,res,next) => {
   let body = req.body
   students.push(body)
   res.json({student: body})
+})
 
+router.put('/:id', (req, res, next) =>{
+  let body = req.body
+  let id = req.params.id
+
+  const mapped = students.map(student => {
+    if (student.id == id){
+
+      return body
+    } else {
+      return student
+    }
+  })
+  characters = mapped
+
+  res.json({ student: body })
 })
 
 
