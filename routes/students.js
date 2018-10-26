@@ -20,22 +20,24 @@ router.post('/', (req,res,next) => {
   res.json({student: body})
 })
 
-router.put('/:id', (req, res, next) =>{
-  let body = req.body
-  let id = req.params.id
+router.put('/:id', (req, res) =>{
+  const body = req.body;
+  const id = req.params.id;
 
-  const mapped = students.map(student => {
-    if (student.id == id){
-
-      return body
-    } else {
-      return student
+  for(let i = 0; i < students.length; i++){
+    if(id == students[i].id){
+      students[i] = body;
     }
-  })
-  characters = mapped
-
+  }
   res.json({ student: body })
 })
+
+router.delete('/:id', (req, res, next)=>{
+  let id = parseInt(req.params.id)
+  let deleted = students.splice(id - 1, 1)
+  res.json({ deleted: deleted })
+})
+
 
 
 module.exports = router
