@@ -15,7 +15,7 @@ app.get('/', (req,res,next) => {
   res.send('🍰')
 })
 
-// app.use('/cakes', cakesRoute)
+app.use('/cakes', cakesRoute)
 app.use('/students', studentsRoute)
 
 // error handling
